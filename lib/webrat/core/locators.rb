@@ -16,5 +16,9 @@ module Webrat
       Field.load(@session, Webrat::XML.xpath_at(dom, xpath))
     end
 
+    def field_by_css(selector)
+      field_by_xpath Webrat::XML.css_to_xpath(selector)
+    end    
+
   end
 end

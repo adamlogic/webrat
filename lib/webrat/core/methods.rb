@@ -51,6 +51,7 @@ module Webrat
       :selects_date, :selects_time, :selects_datetime,
       :select_date, :select_time, :select_datetime,
       :field_by_xpath,
+      :field_by_css,
       :field_with_id,
       :selenium,
       :simulate, :automate
