@@ -289,6 +289,16 @@ module Webrat
       FormLocator.new(@session, dom, id).locate.submit
     end
 
+    # Delegates to submit_form, but ensures that Rails responds as :js
+    #
+    # Example:
+    #   submit_form_via_ajax 'login'
+    def submit_form_via_ajax(*args)
+      @session.http_accept :js
+      @session.header 'HTTP_X_REQUESTED_WITH', 'XMLHttpRequest'
+      submit_form *args
+    end
+
     def dom # :nodoc:
       return @dom if @dom
 

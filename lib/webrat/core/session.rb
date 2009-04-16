@@ -241,6 +241,7 @@ For example:
     def_delegators :current_scope, :fill_in,            :fills_in
     def_delegators :current_scope, :set_hidden_field
     def_delegators :current_scope, :submit_form
+    def_delegators :current_scope, :submit_form_via_ajax
     def_delegators :current_scope, :check,              :checks
     def_delegators :current_scope, :uncheck,            :unchecks
     def_delegators :current_scope, :choose,             :chooses

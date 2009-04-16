@@ -45,7 +45,7 @@ module Webrat
       :clicks_link_within, :click_link_within,
       :field_labeled,
       :select_option,
-      :set_hidden_field, :submit_form,
+      :set_hidden_field, :submit_form, :submit_form_via_ajax,
       :request_page, :current_dom,
       :response_body,
       :selects_date, :selects_time, :selects_datetime,
