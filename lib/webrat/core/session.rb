@@ -95,6 +95,10 @@ For example:
       @default_headers.dup.merge(@custom_headers.dup)
     end
 
+    def reset_headers
+      @custom_headers = @default_headers
+    end
+
     def request_page(url, http_method, data) #:nodoc:
       h = headers
       h['HTTP_REFERER'] = @current_url if @current_url

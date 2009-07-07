@@ -297,6 +297,7 @@ module Webrat
       @session.http_accept :js
       @session.header 'HTTP_X_REQUESTED_WITH', 'XMLHttpRequest'
       submit_form *args
+      @session.reset_headers
     end
 
     def dom # :nodoc:
