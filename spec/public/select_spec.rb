@@ -380,6 +380,24 @@ describe "select" do
     click_button
   end
 
+  it "should allow a preselected item to be selected" do
+    with_html <<-HTML
+      <html>
+      <form method="post" action="/login">
+        <select name="clothes[]" multiple="multiple">
+          <option value="tshirt" selected="selected">tshirt</option>
+          <option value="pants">pants</option>
+        </select>
+        <input type="submit" />
+      </form>
+      </html>
+    HTML
+
+    webrat_session.should_receive(:post).with("/login", "clothes" => ['tshirt'])
+    select 'tshirt'
+    click_button
+  end
+
   it "should allow fields that exist to be selected or throw errors" do
     with_html <<-HTML
       <html>

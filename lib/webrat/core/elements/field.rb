@@ -443,7 +443,7 @@ module Webrat
     end
 
     def set(value)
-      @value << value
+      @value << value unless @value.include?(value)
     end
 
     def unset(value)
